@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             <div class="product-name">${item.name} ${item.badge ? `<span class="product-badge">${item.badge}</span>` : ''}</div>
                             <div class="product-specs">${item.specs}</div>
                         </div>
-                        <div class="product-price">Rp ${item.price.toLocaleString('id-ID')}/bulan</div>
+                        <div class="product-price">Rp ${item.price.toLocaleString('id-ID')}</div>
                     `;
                     isiDalamAkordeon.appendChild(divItemProduk);
                 });
