@@ -1,78 +1,53 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const loginForm = document.getElementById('loginForm');
-    const usernameInput = document.getElementById('username');
-    const passwordInput = document.getElementById('password');
-    const passwordError = document.getElementById('passwordError');
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Admin Dash</title>
+    <link rel="icon" href="https://files.catbox.moe/0g81e5.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="/css/login_admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <div class="registration-container">
+            <div class="form-header">
+                <h2>Login ke Akun Anda</h2>
+                <p>Masukkan kredensial Anda untuk melanjutkan</p>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username" class="form-label">Nama Pengguna atau Email</label>
+                    <input type="text" id="username" class="form-input" placeholder="Masukkan nama pengguna atau email Anda" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">Kata Sandi</label>
+                    <input type="password" id="password" class="form-input" placeholder="Masukkan kata sandi Anda" required>
+                    <p class="password-hint" id="passwordError"></p>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+            </form>
+            <p style="text-align: center; margin-top: 20px; color: var(--text-secondary);">
+                Belum punya akun? 
+                <a href="/app/admin.html" style="color: var(--accent-color); text-decoration: none;">Daftar di sini</a>
+            </p>
+        </div>
+    </div>
 
-    loginForm.addEventListener('submit', (event) => {
-        event.preventDefault();
+    <div class="floating-theme-switcher">
+        <button class="toggle-button" id="themeToggleButton">
+            <i class="fas fa-palette"></i>
+        </button>
+        <div class="theme-options" id="themeOptions">
+            <button class="theme-button green-theme active" data-theme="green"></button>
+            <button class="theme-button red-theme" data-theme="red"></button>
+            <button class="theme-button blue-theme" data-theme="blue"></button>
+        </div>
+    </div>
 
-        passwordError.classList.remove('show-error');
-        passwordError.textContent = '';
-
-        const username = usernameInput.value.trim();
-        const password = passwordInput.value.trim();
-
-        if (username === '' || password === '') {
-            passwordError.textContent = 'Nama pengguna/email dan kata sandi tidak boleh kosong.';
-            passwordError.classList.add('show-error');
-            return;
-        }
-
-        console.log('Mengirim data login:', { username, password });
-
-        setTimeout(() => {
-            if (username === 'user' && password === 'password') {
-                alert('Login berhasil! Selamat datang, ' + username + '!');
-            } else {
-                passwordError.textContent = 'Nama pengguna atau kata sandi salah.';
-                passwordError.classList.add('show-error');
-            }
-        }, 1000);
-    });
-
-    const themeToggleButton = document.getElementById('themeToggleButton');
-    const themeOptions = document.getElementById('themeOptions');
-    const themeButtons = document.querySelectorAll('.theme-button');
-
-    themeToggleButton.addEventListener('click', () => {
-        themeOptions.classList.toggle('show');
-    });
-
-    themeButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const selectedTheme = button.dataset.theme;
-
-            document.body.classList.remove('theme-red', 'theme-blue');
-
-            if (selectedTheme === 'red') {
-                document.body.classList.add('theme-red');
-            } else if (selectedTheme === 'blue') {
-                document.body.classList.add('theme-blue');
-            }
-
-            themeButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-
-            localStorage.setItem('selectedTheme', selectedTheme);
-        });
-    });
-
-    const savedTheme = localStorage.getItem('selectedTheme');
-    if (savedTheme) {
-        document.body.classList.remove('theme-red', 'theme-blue');
-        if (savedTheme === 'red') {
-            document.body.classList.add('theme-red');
-        } else if (savedTheme === 'blue') {
-            document.body.classList.add('theme-blue');
-        }
-
-        themeButtons.forEach(btn => {
-            if (btn.dataset.theme === savedTheme) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
-        });
-    }
-});
+    <script src="/app/admin.js"></script>
+</body>
+</html>
