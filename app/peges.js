@@ -405,7 +405,7 @@ document.addEventListener('DOMContentLoaded', function () {
         pesan += `Surel: ${surel}\n\n`;
         pesan += `Detail Pesanan:\n`;
         pesan += `Paket Hosting: ${namaProdukTerpilih}\n`;
-        pesan += `Harga Paket: Rp ${hargaProdukTerpilih.toLocaleString('id-ID')}/bulan\n`;
+        pesan += `Harga Paket: Rp ${hargaProdukTerpilih.toLocaleString('id-ID')}\n`;
         pesan += `Pajak: Rp ${pajakAkhir.toLocaleString('id-ID')}\n`;
         pesan += `Metode Pembayaran: ${namaMetodePembayaran}\n`;
         pesan += `Total Pembayaran: Rp ${totalAkhir.toLocaleString('id-ID')}\n\n`;
