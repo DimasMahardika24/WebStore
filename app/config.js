@@ -18,8 +18,7 @@ fas fa-dollar-sign
 fas fa-tags
 fas fa-wallet
 =========================
-*/
-const products = [
+*/const products = [
     {
         category: 'Paket Panel Pterodactyl',
         items: [
@@ -35,15 +34,31 @@ const products = [
         ]
     },
     {
-        category: 'Paket VPS',
+        category: 'Script',
         items: [
-            { value: 'vps-1core-1gb', name: 'VPS Mini', price: 15000, specs: '1 vCore CPU, 1GB RAM, 20GB SSD, 1TB Bandwidth', badge: 'Populer' },
-            { value: 'vps-2core-2gb', name: 'VPS Standar', price: 25000, specs: '2 vCore CPU, 2GB RAM, 40GB SSD, 2TB Bandwidth' },
-            { value: 'vps-4core-4gb', name: 'VPS Pro', price: 45000, specs: '4 vCore CPU, 4GB RAM, 80GB SSD, Unlimited Bandwidth', badge: 'Terbaik' }
+            { value: 'script-basic', name: 'Script Basic', price: 3000, specs: 'Bot WA sederhana, fitur umum' }
+        ]
+    },
+    {
+        category: 'Advance SC',
+        items: [
+            { value: 'script-advance', name: 'Script Advance', price: 10000, specs: 'Fitur lengkap, include panel, auto-backup' }
+        ]
+    },
+    {
+        category: 'Owner SC',
+        items: [
+            { value: 'script-owner', name: 'Script Owner', price: 20000, specs: 'Full akses source code, hak edit penuh' }
+        ]
+    },
+    {
+        category: 'Sewa Bot',
+        items: [
+            { value: 'sewa-1bulan', name: 'Sewa Bot 1 Bulan', price: 5000, specs: 'Bot aktif 24/7, maintenance rutin', badge: 'Rekomendasi' },
+            { value: 'sewa-3bulan', name: 'Sewa Bot 3 Bulan', price: 12000, specs: 'Lebih hemat, cocok buat jangka menengah' }
         ]
     }
 ];
-
 const faqData = [
     {
         question: 'Apa itu DhikzxCloud?',
